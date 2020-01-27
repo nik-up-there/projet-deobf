@@ -1,0 +1,4 @@
+Dump of assembler code for function printf@plt:                                     
+   0x0000000000400510 <+0>:     jmp    QWORD PTR [rip+0x202b02]        # 0x603018 <printf@got.plt>                                                                      
+   0x0000000000400516 <+6>:     push   0x0                                          
+   0x000000000040051b <+11>:    jmp    0x400500 

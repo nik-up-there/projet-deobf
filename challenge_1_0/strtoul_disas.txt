@@ -1,0 +1,4 @@
+Dump of assembler code for function strtoul@plt:
+   0x0000000000400540 <+0>:     jmp    QWORD PTR [rip+0x202aea]        # 0x603030 <strtoul@got.plt>
+   0x0000000000400546 <+6>:     push   0x3
+   0x000000000040054b <+11>:    jmp    0x400500
