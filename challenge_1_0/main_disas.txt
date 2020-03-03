@@ -1,0 +1,65 @@
+Dump of assembler code for function main:
+   0x0000000000400650 <+0>:     push   rbp
+   0x0000000000400651 <+1>:     mov    rbp,rsp
+   0x0000000000400654 <+4>:     sub    rsp,0x50
+   0x0000000000400658 <+8>:     mov    DWORD PTR [rbp-0x4],0x0
+   0x000000000040065f <+15>:    mov    DWORD PTR [rbp-0x8],edi
+   0x0000000000400662 <+18>:    mov    QWORD PTR [rbp-0x10],rsi
+   0x0000000000400666 <+22>:    mov    QWORD PTR [rbp-0x18],rdx
+   0x000000000040066a <+26>:    call   0x400770 <o___88>
+   0x000000000040066f <+31>:    mov    edi,DWORD PTR [rbp-0x8]
+   0x0000000000400672 <+34>:    mov    DWORD PTR ds:0x603058,edi
+   0x0000000000400679 <+41>:    mov    rdx,QWORD PTR [rbp-0x10]
+   0x000000000040067d <+45>:    mov    QWORD PTR ds:0x603068,rdx
+   0x0000000000400685 <+53>:    mov    rdx,QWORD PTR [rbp-0x18]
+   0x0000000000400689 <+57>:    mov    QWORD PTR ds:0x603060,rdx
+   0x0000000000400691 <+65>:    call   0x400790 <o___151>
+   0x0000000000400696 <+70>:    cmp    DWORD PTR [rbp-0x8],0x2
+   0x000000000040069a <+74>:    je     0x4006c3 <main+115>
+   0x00000000004006a0 <+80>:    movabs rdi,0x401a84
+   0x00000000004006aa <+90>:    mov    esi,0x1
+   0x00000000004006af <+95>:    mov    al,0x0
+   0x00000000004006b1 <+97>:    call   0x400510 <printf@plt>
+   0x00000000004006b6 <+102>:   mov    edi,0xffffffff
+   0x00000000004006bb <+107>:   mov    DWORD PTR [rbp-0x40],eax
+   0x00000000004006be <+110>:   call   0x400550 <exit@plt>
+   0x00000000004006c3 <+115>:   mov    DWORD PTR [rbp-0x2c],0x0
+   0x00000000004006ca <+122>:   cmp    DWORD PTR [rbp-0x2c],0x1
+   0x00000000004006ce <+126>:   jge    0x400712 <main+194>
+   0x00000000004006d4 <+132>:   xor    eax,eax
+   0x00000000004006d6 <+134>:   mov    esi,eax
+   0x00000000004006d8 <+136>:   mov    edx,0xa
+   0x00000000004006dd <+141>:   mov    rcx,QWORD PTR [rbp-0x10]
+   0x00000000004006e1 <+145>:   mov    eax,DWORD PTR [rbp-0x2c]
+   0x00000000004006e4 <+148>:   add    eax,0x1
+   0x00000000004006e7 <+151>:   movsxd rdi,eax
+   0x00000000004006ea <+154>:   mov    rdi,QWORD PTR [rcx+rdi*8]
+   0x00000000004006ee <+158>:   call   0x400540 <strtoul@plt>
+   0x00000000004006f3 <+163>:   mov    QWORD PTR [rbp-0x38],rax
+   0x00000000004006f7 <+167>:   mov    rax,QWORD PTR [rbp-0x38]
+   0x00000000004006fb <+171>:   movsxd rcx,DWORD PTR [rbp-0x2c]
+   0x00000000004006ff <+175>:   mov    QWORD PTR [rbp+rcx*8-0x20],rax
+   0x0000000000400704 <+180>:   mov    edx,DWORD PTR [rbp-0x2c]
+   0x0000000000400707 <+183>:   add    edx,0x1
+   0x000000000040070a <+186>:   mov    DWORD PTR [rbp-0x2c],edx
+   0x000000000040070d <+189>:   jmp    0x4006ca <main+122>
+   0x0000000000400712 <+194>:   lea    rsi,[rbp-0x28]
+   0x0000000000400716 <+198>:   lea    rdi,[rbp-0x20]
+   0x000000000040071a <+202>:   call   0x4007b0 <o___97>
+   0x000000000040071f <+207>:   mov    DWORD PTR [rbp-0x3c],0x0
+   0x0000000000400726 <+214>:   cmp    DWORD PTR [rbp-0x3c],0x1
+   0x000000000040072a <+218>:   jge    0x40075b <main+267>
+   0x0000000000400730 <+224>:   movabs rdi,0x401aa9
+   0x000000000040073a <+234>:   movsxd rax,DWORD PTR [rbp-0x3c]
+   0x000000000040073e <+238>:   mov    rsi,QWORD PTR [rbp+rax*8-0x28]
+   0x0000000000400743 <+243>:   mov    al,0x0
+   0x0000000000400745 <+245>:   call   0x400510 <printf@plt>
+   0x000000000040074a <+250>:   mov    ecx,DWORD PTR [rbp-0x3c]
+   0x000000000040074d <+253>:   add    ecx,0x1
+   0x0000000000400750 <+256>:   mov    DWORD PTR [rbp-0x3c],ecx
+   0x0000000000400753 <+259>:   mov    DWORD PTR [rbp-0x44],eax
+   0x0000000000400756 <+262>:   jmp    0x400726 <main+214>
+   0x000000000040075b <+267>:   xor    eax,eax
+   0x000000000040075d <+269>:   add    rsp,0x50
+   0x0000000000400761 <+273>:   pop    rbp
+   0x0000000000400762 <+274>:   ret
