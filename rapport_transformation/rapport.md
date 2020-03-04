@@ -1,6 +1,6 @@
 # Split transformation
 
-![img](./assets/split_schema.png)
+![img](./../assets/split_schema.png)
 
 **Sources**:
 https://tigress.wtf/split.html
