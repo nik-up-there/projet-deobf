@@ -10,7 +10,7 @@ void ownprint(int number, long long *factpointeur) {
     printf("Factorial of %d is: %lld\n",number, *factpointeur);    
 }
 
-int main() {
+int test() {
 	int i = 1;
 	long long fact = 1;
 	int number = 10;
