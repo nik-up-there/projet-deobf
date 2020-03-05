@@ -20,6 +20,14 @@ gcc ./filename.c -o outputname
 ./outputname arg1 arg2 ...
 ```
 
+## Tigress
+
+```
+tigress --Environment=x86_64:Linux:Gcc:4.6 --Transform=TRANSFORMATION --Functions=FUNC1,FUNC2 --out=OUTPUT INPUT
+
+tigress --Environment=x86_64:Linux:Gcc:4.6 --Transform=Flatten --Functions=main --out=OUTPUT /media/sf_kali-sharedfolder/deobfuscation/projet-deobf/original_c/FILE
+```
+
 ## Fichiers de tests 
 
 **Fichier a ecrire :**

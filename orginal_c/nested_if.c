@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "../../../tigress/3.1/tigress.h"
+#include "tigress.h"
 
 int main(int argc, char* argv[]){
   int a = 1;
