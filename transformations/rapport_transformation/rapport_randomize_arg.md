@@ -50,16 +50,23 @@ tigress --Environment=x86_64:Linux:Gcc:4.6 \
     <tr>
         <td style="max-width:350px;"><pre><code>
 int function_with_3_args(char *str, long long pow, int cpt) { 
-    int len;
-    long long value;
-    len = (int)sizeof(str);
-    value = (long long)(cpt * len) * pow;
-    printf((char const  */* __restrict  */)"value : %lld", value);
-    return (0);
+  int len;
+  int tmp;
+  long long value;
+  tmp = strlen(str);
+  len = tmp;
+  value = (long long)(cpt * len) * pow;
+  printf((char const  */* __restrict  */)"value : %lld", value);
+  return (0);
 }
         </code></pre></td>
         <td style="max-width: 350px"><pre>
-            code decompilé
+undefined8 _function_with_3_args(char *param_1,long param_2,int param_3) {
+    size_t sVar1;
+    sVar1 = _strlen(param_1);
+    _printf("value : %lld",(param_3 * (int)sVar1) * param_2);
+    return 0;
+}
         </pre></td>
     </tr>
 </table>
@@ -83,20 +90,23 @@ tigress --Environment=x86_64:Linux:Gcc:4.6 \
     <tr>
         <td style="max-width:350px;"><pre>
 int function_with_3_args(double bogus___1, long long pow, char *str, int cpt, void *bogus___2) { 
-    int len;
-    long long value;
-    len = (int)sizeof(str);
-    value = (long long)(cpt * len) * pow;
-    printf((char const  */* __restrict  */)"value : %lld", value);
-    return (0);
+  int len;
+  int tmp;
+  long long value;
+  tmp = strlen(str);
+  len = tmp;
+  value = (long long)(cpt * len) * pow;
+  printf((char const  */* __restrict  */)"value : %lld", value);
+  return (0);
 }
         </pre></td>
         <td style="max-width: 350px"><pre>
-undefined8 _function_with_3_args(long param_1,undefined8 param_2,int param_3){
-    _printf("value : %lld",(param_3 * 8) * param_1);
+undefined8 _function_with_3_args(long param_1,char *param_2,int param_3) {
+    size_t sVar1;
+    sVar1 = _strlen(param_2);
+    _printf("value : %lld",(param_3 * (int)sVar1) * param_1);
     return 0;
 }
-
         </pre></td>
     </tr>
 </table>
