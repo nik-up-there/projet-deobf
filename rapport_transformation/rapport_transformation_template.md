@@ -27,7 +27,7 @@ En conclusion, ...
 
 ```
 ```c
-// Objfusqué par Split
+// Objfusqué
 ```
 ```c
 // Décompilé

@@ -4,10 +4,6 @@
 
 int main() {
 	int number = 10;
-
-	if(number >= 10){
-		printf("True");    
-	}
-
+	if(number >= 10){ printf("True"); }
 	return 0;
 }
