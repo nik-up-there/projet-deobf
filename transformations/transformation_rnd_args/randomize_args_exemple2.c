@@ -13,20 +13,20 @@ extern int posix_memalign(void **memptr , unsigned int alignment , unsigned int 
 extern int fclose(void *stream ) ;
 extern int fcntl(int filedes , int cmd  , ...) ;
 extern int pthread_join(void *thread , void **value_ptr ) ;
-extern unsigned int strlen(char const   *s ) ;
+extern int ( /* missing proto */  strlen)() ;
 extern int open(char const   *filename , int oflag  , ...) ;
-extern void perror(char const   *str ) ;
 extern int pthread_cond_wait(int *cond , int *mutex ) ;
 extern int pthread_barrier_destroy(int *barrier ) ;
+extern void perror(char const   *str ) ;
 extern int pthread_mutex_init(int *mutex , int *attr ) ;
 extern int strncmp(char const   *s1 , char const   *s2 , unsigned int maxlen ) ;
 extern int printf(char const   * __restrict  __format  , ...) ;
 extern int write(int filedes , void *buf , unsigned int nbyte ) ;
 extern int pthread_cond_init(int *cond , int *attr ) ;
 extern int pthread_cond_signal(int *cond ) ;
+extern int scanf(char const   *format  , ...) ;
 extern int ptrace(int request , void *pid , void *addr , int data ) ;
 extern int pthread_barrier_init(int *barrier , int *attr , unsigned int count ) ;
-extern int scanf(char const   *format  , ...) ;
 extern int raise(int sig ) ;
 extern float strtof(char const   *str , char const   *endptr ) ;
 extern unsigned int strnlen(char const   *s , unsigned int maxlen ) ;
@@ -35,15 +35,15 @@ struct timeval {
    long tv_usec ;
 };
 extern long clock(void) ;
-extern int unlink(char const   *filename ) ;
 extern void qsort(void *base , unsigned int nel , unsigned int width , int (*compar)(void *a ,
                                                                                      void *b ) ) ;
+extern int unlink(char const   *filename ) ;
 extern long time(long *tloc ) ;
 extern int read(int filedes , void *buf , unsigned int nbyte ) ;
 extern int rand() ;
 extern double difftime(long tv1 , long tv0 ) ;
-extern void *fopen(char const   *filename , char const   *mode ) ;
 extern int strcmp(char const   *a , char const   *b ) ;
+extern void *fopen(char const   *filename , char const   *mode ) ;
 extern int pthread_barrier_wait(int *barrier ) ;
 extern double sqrt(double x ) ;
 extern int pthread_mutex_lock(int *mutex ) ;
@@ -56,16 +56,16 @@ extern int gethostname(char *name , unsigned int namelen ) ;
 extern int nanosleep(int *rqtp , int *rmtp ) ;
 extern unsigned long strtoul(char const   *str , char const   *endptr , int base ) ;
 extern void abort() ;
-extern int fprintf(struct _IO_FILE *stream , char const   *format  , ...) ;
 extern void free(void *ptr ) ;
+extern int fprintf(struct _IO_FILE *stream , char const   *format  , ...) ;
 extern int pthread_mutex_unlock(int *mutex ) ;
 extern void signal(int sig , void *func ) ;
 extern void exit(int status ) ;
 void main(void) ;
 extern int pthread_create(void *thread , void *attr , void *start_routine , void *arg ) ;
 extern int atoi(char const   *s ) ;
-extern int fscanf(struct _IO_FILE *stream , char const   *format  , ...) ;
 extern int fseek(struct _IO_FILE *stream , long offs , int whence ) ;
+extern int fscanf(struct _IO_FILE *stream , char const   *format  , ...) ;
 typedef struct _IO_FILE FILE;
 extern int close(int filedes ) ;
 extern int mprotect(void *addr , unsigned int len , int prot ) ;
@@ -76,10 +76,12 @@ int function_with_3_args(double bogus___1 , long long pow , char *str , int cpt 
                          void *bogus___2 ) 
 { 
   int len ;
+  int tmp ;
   long long value ;
 
   {
-  len = (int )sizeof(str);
+  tmp = strlen(str);
+  len = tmp;
   value = (long long )(cpt * len) * pow;
   printf((char const   */* __restrict  */)"value : %lld", value);
   return (0);
