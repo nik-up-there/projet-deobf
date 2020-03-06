@@ -48,8 +48,7 @@ tigress --Environment=x86_64:Linux:Gcc:4.6 \
         <th>Décompilé</th>
     </tr>
     <tr>
-        <td style="max-width:350px;"><pre>
-``` c
+        <td style="max-width:350px;"><pre><code>
 int function_with_3_args(char *str, long long pow, int cpt) { 
     int len;
     long long value;
@@ -58,8 +57,7 @@ int function_with_3_args(char *str, long long pow, int cpt) {
     printf((char const  */* __restrict  */)"value : %lld", value);
     return (0);
 }
-```
-        </pre></td>
+        </code></pre></td>
         <td style="max-width: 350px"><pre>
             code decompilé
         </pre></td>
