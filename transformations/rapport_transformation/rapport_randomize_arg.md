@@ -92,7 +92,11 @@ int function_with_3_args(double bogus___1, long long pow, char *str, int cpt, vo
 }
         </pre></td>
         <td style="max-width: 350px"><pre>
-            code decompilé
+undefined8 _function_with_3_args(long param_1,undefined8 param_2,int param_3){
+    _printf("value : %lld",(param_3 * 8) * param_1);
+    return 0;
+}
+
         </pre></td>
     </tr>
 </table>
