@@ -1,6 +1,6 @@
 # Flatten transformation
 
-![img](./../assets/_schema.png)
+![img](./../assets/rndargs_schema.png)
 
 **Sources**:
 https://tigress.wtf/randomizeArguments.html
@@ -49,14 +49,16 @@ tigress --Environment=x86_64:Linux:Gcc:4.6 \
     </tr>
     <tr>
         <td style="max-width:350px;"><pre>
-            int function_with_3_args(char *str, long long pow, int cpt) { 
-                int len;
-                long long value;
-                len = (int)sizeof(str);
-                value = (long long)(cpt * len) * pow;
-                printf((char const  */* __restrict  */)"value : %lld", value);
-                return (0);
-            }
+``` c
+int function_with_3_args(char *str, long long pow, int cpt) { 
+    int len;
+    long long value;
+    len = (int)sizeof(str);
+    value = (long long)(cpt * len) * pow;
+    printf((char const  */* __restrict  */)"value : %lld", value);
+    return (0);
+}
+```
         </pre></td>
         <td style="max-width: 350px"><pre>
             code decompilé
@@ -82,14 +84,14 @@ tigress --Environment=x86_64:Linux:Gcc:4.6 \
     </tr>
     <tr>
         <td style="max-width:350px;"><pre>
-            int function_with_3_args(double bogus___1, long long pow, char *str, int cpt, void *bogus___2) { 
-                int len;
-                long long value;
-                len = (int)sizeof(str);
-                value = (long long)(cpt * len) * pow;
-                printf((char const  */* __restrict  */)"value : %lld", value);
-                return (0);
-            }
+int function_with_3_args(double bogus___1, long long pow, char *str, int cpt, void *bogus___2) { 
+    int len;
+    long long value;
+    len = (int)sizeof(str);
+    value = (long long)(cpt * len) * pow;
+    printf((char const  */* __restrict  */)"value : %lld", value);
+    return (0);
+}
         </pre></td>
         <td style="max-width: 350px"><pre>
             code decompilé
