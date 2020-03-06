@@ -1,0 +1,3 @@
+tigress --Environment=x86_64:Linux:Gcc:4.6 --Transform=RndArgs --Functions=function_with_3_args --out=randomize_args_exemple1.c /root/Downloads/projet-deobf/orginal_c/args.c
+tigress --Environment=x86_64:Linux:Gcc:4.6 --Transform=RndArgs --Functions=function_with_3_args --RndArgsBogusNo=2 --out=randomize_args_exemple2.c /root/Downloads/projet-deobf/orginal_c/args.c
+
