@@ -26,9 +26,17 @@ En conclusion, ...
 // Original
 
 ```
-```c
-// Objfusqué
-```
-```c
-// Décompilé
-```
+<table style="width: 700px;">
+    <tr>
+        <th>Obfusqué</th>
+        <th>Décompilé</th>
+    </tr>
+    <tr>
+        <td style="max-width:350px;"><pre>
+            code obfusqué
+        </pre></td>
+        <td style="max-width: 350px"><pre>
+            code decompilé
+        </pre></td>
+    </tr>
+</table>
