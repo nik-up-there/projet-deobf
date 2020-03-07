@@ -26,6 +26,7 @@ En conclusion, ...
 // Original
 
 ```
+<<<<<<< HEAD:rapport_transformation/rapport_transformation_template.md
 
 <table style="max-width: 100%;"><tr><th>
 Obfusqué
@@ -39,3 +40,19 @@ Décompilé
 <td style="max-width: 350px"><pre style="white-space: pre-wrap;">
 
 </pre></td></tr></table>
+=======
+<table style="width: 700px;">
+    <tr>
+        <th>Obfusqué</th>
+        <th>Décompilé</th>
+    </tr>
+    <tr>
+        <td style="max-width:350px;"><pre>
+            code obfusqué
+        </pre></td>
+        <td style="max-width: 350px"><pre>
+            code decompilé
+        </pre></td>
+    </tr>
+</table>
+>>>>>>> b69e0fdc536036dae80b350604fb818e861ddc54:transformations/rapport_transformation/rapport_transformation_template.md

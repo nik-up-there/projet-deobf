@@ -3,7 +3,7 @@
 #include <stdlib.h> 
 
 int function_with_3_args(int cpt, char* str, long long pow) {
-    int len = sizeof(str);
+    int len = strlen(str);
     long long value = cpt * len * pow;
 	printf("value : %lld", value);    
 	return 0;
