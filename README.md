@@ -25,7 +25,7 @@ gcc ./filename.c -o outputname
 ```
 tigress --Environment=x86_64:Linux:Gcc:4.6 --Transform=TRANSFORMATION --Functions=FUNC1,FUNC2 --out=OUTPUT INPUT
 
-tigress --Environment=x86_64:Linux:Gcc:4.6 --Transform=Flatten --Functions=main --out=OUTPUT /media/sf_kali-sharedfolder/deobfuscation/projet-deobf/original_c/FILE
+tigress --Environment=x86_64:Linux:Gcc:4.6 --Transform=EncodeArithmetic --Functions=main --out=encArith_basic_arithmetic.c /media/sf_kali-sharedfolder/deobfuscation/projet-deobf/transformation_encode_arithmetic/basic_arithmetic.c
 ```
 
 ## Fichiers de tests 
@@ -73,3 +73,13 @@ tigress --Environment=x86_64:Linux:Gcc:4.6 --Transform=Flatten --Functions=main 
 1. Mesure pour regarder les performances d’une fonction
 1. Copy pour copier une fonction ex: la merger avec elle meme
 1. Self modify ?
+2. Expliquer et comprendre les choses récurrentes à toutes les transformations.
+   ```
+   int main(int _formal_argc , char **_formal_argv , char **_formal_envp ) {
+   megaInit();
+   _global_argc = _formal_argc;
+   _global_argv = _formal_argv;
+   _global_envp = _formal_envp;
+   _BARRIER_0 = 1;
+   } 
+   ```

@@ -26,9 +26,16 @@ En conclusion, ...
 // Original
 
 ```
-```c
-// Objfusqué
-```
-```c
-// Décompilé
-```
+
+<table style="max-width: 100%;"><tr><th>
+Obfusqué
+</th>
+<th>
+Décompilé
+</th></tr>
+<tr><td style="max-width: 350px;"><pre style="white-space: pre-wrap;">
+
+</pre></td>
+<td style="max-width: 350px"><pre style="white-space: pre-wrap;">
+
+</pre></td></tr></table>

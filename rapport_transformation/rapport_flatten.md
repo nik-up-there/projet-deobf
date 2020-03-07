@@ -66,13 +66,14 @@ int main() {
 }
 ```
 
-<table style="width: 700px;"><tr><th>
+
+<table style="max-width: 100%;"><tr><th>
 Obfusqué
 </th>
 <th>
 Décompilé
 </th></tr>
-<tr><td style="max-width:350px;"><pre>
+<tr><td style="max-width: 350px;"><pre style="white-space: pre-wrap;">
 int main(int _formal_argc , char **_formal_argv , char **_formal_envp ) 
 { 
   int number ;
@@ -106,7 +107,7 @@ int main(int _formal_argc , char **_formal_argv , char **_formal_envp )
   }
 }
 </pre></td>
-<td style="max-width: 350px"><pre>
+<td style="max-width: 350px"><pre style="white-space: pre-wrap;">
 undefined8 main(undefined4 param_1,undefined8 param_2,undefined8 param_3){
   ulong local_18;
   int local_c;
@@ -142,6 +143,8 @@ undefined8 main(undefined4 param_1,undefined8 param_2,undefined8 param_3){
 </pre></td></tr></table>
 
 ## Exemple de transformation d'un for
+
+
 ```c
 // Original
 int main() {
@@ -156,8 +159,13 @@ int main() {
 }
 ```
 
-```c
-// Objfusqué
+<table style="max-width: 100%;"><tr><th>
+Obfusqué
+</th>
+<th>
+Décompilé
+</th></tr>
+<tr><td style="max-width: 350px;"><pre style="white-space: pre-wrap;">
 int main(int _formal_argc , char **_formal_argv , char **_formal_envp ) 
 { 
   int i ;
@@ -206,9 +214,8 @@ int main(int _formal_argc , char **_formal_argv , char **_formal_envp )
     }
   }
 }
-```
-```c
-// Décompilé
+</pre></td>
+<td style="max-width: 350px"><pre style="white-space: pre-wrap;">
 undefined8 main(undefined4 param_1,undefined8 param_2,undefined8 param_3){
   undefined8 local_28;
   uint local_1c;
@@ -244,7 +251,7 @@ undefined8 main(undefined4 param_1,undefined8 param_2,undefined8 param_3){
     }
   } while( true );
 }
-```
+</pre></td></tr></table>
 
 ## Exemple de transformation d'un while
 ```c
@@ -261,8 +268,14 @@ int main() {
 	return 0;  
 }
 ```
-```c
-// Objfusqué
+
+<table style="max-width: 100%;"><tr><th>
+Obfusqué
+</th>
+<th>
+Décompilé
+</th></tr>
+<tr><td style="max-width: 350px;"><pre style="white-space: pre-wrap;">
 int main(int _formal_argc , char **_formal_argv , char **_formal_envp ) 
 { 
   int i ;
@@ -300,9 +313,8 @@ int main(int _formal_argc , char **_formal_argv , char **_formal_envp )
     }
   }
 }
-```
-```c
-// Décompilé
+</pre></td>
+<td style="max-width: 350px"><pre style="white-space: pre-wrap;">
 undefined8 main(undefined4 param_1,undefined8 param_2,undefined8 param_3){
   undefined8 local_28;
   uint local_1c;
@@ -338,7 +350,7 @@ undefined8 main(undefined4 param_1,undefined8 param_2,undefined8 param_3){
     }
   } while( true );
 }
-```
+</pre></td></tr></table>
 
 ## Exemple de transformation d'un switch
 ```c
@@ -363,8 +375,13 @@ int main() {
 }
 ```
 
-```c
-// Obfusqué
+<table style="max-width: 100%;"><tr><th>
+Obfusqué
+</th>
+<th>
+Décompilé
+</th></tr>
+<tr><td style="max-width: 350px;"><pre style="white-space: pre-wrap;">
 int main(int _formal_argc , char **_formal_argv , char **_formal_envp ) 
 { 
   int i ;
@@ -419,10 +436,8 @@ int main(int _formal_argc , char **_formal_argv , char **_formal_envp )
     }
   }
 }
-```
-
-```c
-// Décompilé
+</pre></td>
+<td style="max-width: 350px"><pre style="white-space: pre-wrap;">
 undefined8 main(undefined4 param_1,undefined8 param_2,undefined8 param_3){
   undefined8 local_28;
   uint local_1c;
@@ -476,7 +491,7 @@ undefined8 main(undefined4 param_1,undefined8 param_2,undefined8 param_3){
     }
   } while( true );
 }
-```
+</pre></td></tr></table>
 
 ## Comparaison d'un if avec l'option branch/compute/flag (pour les tests conditionnels)
 
@@ -618,6 +633,7 @@ goto *(_1_main_jumpTab[_1_main_next - 0]);
 ```c
 // Décompilé
 // switch
+(défaut)
 
 // goto
 /* WARNING (jumptable): Heritage AFTER dead removal. Example location: s0xffffffffffffffd8 :
