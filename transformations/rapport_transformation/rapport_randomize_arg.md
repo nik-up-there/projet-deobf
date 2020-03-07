@@ -1,6 +1,6 @@
 # Flatten transformation
 
-![img](./../assets/rndargs_schema.png)
+![img](./assets/rndargs_schema.png)
 
 **Sources**:
 https://tigress.wtf/randomizeArguments.html

@@ -1,7 +1,7 @@
 # Flatten transformation
 
-![img](./../assets/flatten_schema.png)
-![img](./../assets/flatten_schema2.png)
+![img](./assets/flatten_schema.png)
+![img](./assets/flatten_schema2.png)
 
 **Sources**:
 https://tigress.wtf/flatten.html

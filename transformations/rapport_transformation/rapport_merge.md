@@ -1,6 +1,6 @@
 # Merge transformation
 
-![img](./../assets/merge_schema.png)
+![img](./assets/merge_schema.png)
 
 **Sources**:
 https://tigress.wtf/merge.html

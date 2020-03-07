@@ -1,6 +1,6 @@
-# Flatten transformation
+# Encode External transformation
 
-![img](../../assets/split_schema.png)
+![img](./assets/encode_external_schema.png)
 
 **Sources**:
 https://tigress.wtf/split.html

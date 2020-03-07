@@ -1,6 +1,6 @@
 # Flatten transformation
 
-![img](./../assets/encode_arith_schema.png)
+![img](./assets/encode_arith_schema.png)
 
 **Sources**:
 https://tigress.wtf/encodeArithmetic.html
