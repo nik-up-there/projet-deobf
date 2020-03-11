@@ -16,7 +16,7 @@ Options :
 Cette transformation change l'ordre des arguments des fonctions et ajoute des arguments inutile.  
 RQ : Il est preconisé de run cette transformation après un merge pour perdre le nouvel argument introduit lors de cette dernière transformation.   
 RQ : On peut aussi run cette transformation après un EncodeLitterals sur les strings pour masquer la signature de la fonction d'encodage de chaîne générée par cette dernière transformation.  
-RQ : Attention on ne peut pas utiliser cette transformation sur des fonctions avec des varargs ```c int f(int a, ...) ``` \n
+RQ : Attention on ne peut pas utiliser cette transformation sur des fonctions avec des varargs ```int f(int a, ...) ``` \n
 
 **Comment déobfusquer la transformation Split**
 - Au niveau de l'ordre des arguments, il n'y a pas grand chose à faire...
