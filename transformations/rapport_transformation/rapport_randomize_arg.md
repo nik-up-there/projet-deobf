@@ -13,9 +13,9 @@ Options :
 - ```--Functions=function_name``` ==> specifie le nom de la fonction sur laquelle appliquer la transformation 
 - ```--RndArgsBogusNo=2``` ==> specifie le nb d'arguments inutiles à rajouter a ladite fonction (defaut = 0)
 
-Cette transformation change l'ordre des arguments des fonctions et ajoute des arguments inutile. \n
-RQ : Il est preconisé de run cette transformation après un merge pour perdre le nouvel argument introduit lors de cette dernière transformation. \n
-RQ : On peut aussi run cette transformation après un EncodeLitterals sur les strings pour masquer la signature de la fonction d'encodage de chaîne générée par cette dernière transformation. \n
+Cette transformation change l'ordre des arguments des fonctions et ajoute des arguments inutile.  
+RQ : Il est preconisé de run cette transformation après un merge pour perdre le nouvel argument introduit lors de cette dernière transformation.   
+RQ : On peut aussi run cette transformation après un EncodeLitterals sur les strings pour masquer la signature de la fonction d'encodage de chaîne générée par cette dernière transformation.  
 RQ : Attention on ne peut pas utiliser cette transformation sur des fonctions avec des varargs ```c int f(int a, ...) ``` \n
 
 **Comment déobfusquer la transformation Split**
@@ -72,7 +72,7 @@ undefined8 _function_with_3_args(char *param_1,long param_2,int param_3) {
     </tr>
 </table>
 
-RQ : Premierement rien avoir avec la transformnation mais on remarque qu'à la décompilation ghidra converti les ```long long``` en ```long``` .
+RQ : Premierement rien avoir avec la transformation mais on remarque qu'à la décompilation ghidra converti les ```long long``` en ```long``` .
 
 Dans un second temps, nous allons donc tester la transformation RandomizeArgument en specifiant a tigress de rajouter 2 arguments supplémentaires. 
 ```
