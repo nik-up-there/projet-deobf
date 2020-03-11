@@ -27,9 +27,10 @@ tigress -ldl --Environment=x86_64:Linux:Gcc:4.6 \
 ```
 
 **Comment déobfusquer la transformation Split**
-Lors d'un appel system ou à une librairie externe sans obfuscation, le décompilateur arrive à retrouver le nom de la fonction directement.
+Lors d'un appel système ou à une librairie externe sans obfuscation, le décompilateur arrive à retrouver le nom de la fonction directement.
 
 **Exemples**
+L'utilisation d'une fonction d'initialisation permet de mettre dans une fonction à part permet d'encapsuler ces appels externes où l'on voit le nom des fonctions appelées. C'est alors intéressant si on encodeLitterals et Virtualize cette fonction pour vraiemnt obfusquer les appels.
 
 ## Exemple de transformation d'appels 
 ```c
