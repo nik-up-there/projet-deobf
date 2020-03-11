@@ -25,7 +25,7 @@ gcc ./filename.c -o outputname
 ```
 tigress --Environment=x86_64:Linux:Gcc:4.6 --Transform=TRANSFORMATION --Functions=FUNC1,FUNC2 --out=OUTPUT INPUT
 
-tigress --Environment=x86_64:Linux:Gcc:4.6 --Transform=EncodeArithmetic --Functions=main --out=encArith_basic_arithmetic.c /media/sf_kali-sharedfolder/deobfuscation/projet-deobf/transformation_encode_arithmetic/basic_arithmetic.c
+tigress -ldl --Environment=x86_64:Linux:Gcc:4.6 --Transform=InitEncodeExternal --Functions=main --InitEncodeExternalSymbols=getpid,gettimeofday --Transform=EncodeExternal --Functions=main --out=encExter_call_external.c --EncodeExternalSymbols=getpid,gettimeofday /media/sf_kali-sharedfolder/deobfuscation/projet-deobf/transformations/transformation_encode_external/call_external.c
 ```
 
 ## Fichiers de tests 
