@@ -44,7 +44,7 @@ Pour déobfusqué cette transformation, il faut donc comprendre l'expression obf
 
 **Exemples**
 
-## Exemple de transformation de différentes expressions arithmétiques
+## Exemple de transformation de différent appels de function (avec argument, avec retour..)
 
 <table style="max-width: 100%;"><tr><th>
 Original

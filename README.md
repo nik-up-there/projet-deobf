@@ -26,6 +26,18 @@ gcc ./filename.c -o outputname
 tigress --Environment=x86_64:Linux:Gcc:4.6 --Transform=TRANSFORMATION --Functions=FUNC1,FUNC2 --out=OUTPUT INPUT
 
 tigress -ldl --Environment=x86_64:Linux:Gcc:4.6 --Transform=InitEncodeExternal --Functions=main --InitEncodeExternalSymbols=getpid,gettimeofday --Transform=EncodeExternal --Functions=main --out=encExter_call_external.c --EncodeExternalSymbols=getpid,gettimeofday /media/sf_kali-sharedfolder/deobfuscation/projet-deobf/transformations/transformation_encode_external/call_external.c
+
+tigress --Environment=x86_64:Linux:Gcc:4.6 \
+--Transform=InitEntropy \
+--Functions=main \
+--InitEntropyKinds=vars \
+--Transform=InitOpaque \
+--Functions=main  \
+--InitOpaqueStructs=list,array,env,input \
+--Transform=AntiAliasAnalysis \
+--Functions=main  \
+--out=antiAliasAnalysis_function_call.c \
+/media/sf_kali-sharedfolder/deobfuscation/projet-deobf/transformations/transformation_anti_alias_analysis/function_call.c
 ```
 
 ## Fichiers de tests 
