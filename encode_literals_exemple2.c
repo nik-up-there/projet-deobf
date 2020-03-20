@@ -10,8 +10,8 @@ char **_global_argv  =    (char **)0;
 extern int posix_memalign(void **memptr , unsigned int alignment , unsigned int size ) ;
 extern int getpagesize() ;
 extern int pthread_join(void *thread , void **value_ptr ) ;
-extern unsigned int strlen(char const   *s ) ;
 extern int open(char const   *filename , int oflag  , ...) ;
+extern unsigned int strlen(char const   *s ) ;
 struct _1_main_1_opaque_NodeStruct {
    struct _1_main_1_opaque_NodeStruct *prev ;
    int data ;
@@ -24,26 +24,25 @@ extern int pthread_mutex_init(int *mutex , int *attr ) ;
 extern int printf(char const   * __restrict  __format  , ...) ;
 int _global_argc  =    0;
 extern int pthread_cond_signal(int *cond ) ;
+extern int scanf(char const   *format  , ...) ;
 extern int pthread_barrier_init(int *barrier , int *attr , unsigned int count ) ;
 extern int raise(int sig ) ;
-extern int scanf(char const   *format  , ...) ;
 char **_global_envp  =    (char **)0;
 extern int unlink(char const   *filename ) ;
 extern int pthread_barrier_wait(int *barrier ) ;
 extern double difftime(long tv1 , long tv0 ) ;
-extern int pthread_mutex_lock(int *mutex ) ;
 extern void *memcpy(void *s1 , void const   *s2 , unsigned int size ) ;
+extern int pthread_mutex_lock(int *mutex ) ;
 struct _1_main_1_opaque_NodeStruct *_1_main_1_opaque_list_1  =    (struct _1_main_1_opaque_NodeStruct *)0;
-extern void *dlsym(void *handle , char *symbol ) ;
 extern int gethostname(char *name , unsigned int namelen ) ;
+extern void *dlsym(void *handle , char *symbol ) ;
 extern void abort() ;
 extern unsigned long strtoul(char const   *str , char const   *endptr , int base ) ;
 extern void free(void *ptr ) ;
 extern int fprintf(struct _IO_FILE *stream , char const   *format  , ...) ;
 extern void exit(int status ) ;
-extern void signal(int sig , void *func ) ;
 int main(int _formal_argc , char **_formal_argv , char **_formal_envp ) ;
-void _2_stringEncoder(int n , char str[] ) ;
+extern void signal(int sig , void *func ) ;
 typedef struct _IO_FILE FILE;
 extern int close(int filedes ) ;
 extern int mprotect(void *addr , unsigned int len , int prot ) ;
@@ -51,32 +50,32 @@ extern double strtod(char const   *str , char const   *endptr ) ;
 extern double log(double x ) ;
 extern double ceil(double x ) ;
 struct _1_main_1_opaque_NodeStruct *_1_main_1_opaque_ptr_2  =    (struct _1_main_1_opaque_NodeStruct *)0;
-extern int fclose(void *stream ) ;
 extern int fcntl(int filedes , int cmd  , ...) ;
-extern int pthread_cond_wait(int *cond , int *mutex ) ;
+extern int fclose(void *stream ) ;
 extern void perror(char const   *str ) ;
+extern int pthread_cond_wait(int *cond , int *mutex ) ;
 extern int pthread_cond_init(int *cond , int *attr ) ;
 extern int write(int filedes , void *buf , unsigned int nbyte ) ;
 extern int ptrace(int request , void *pid , void *addr , int data ) ;
-extern unsigned int strnlen(char const   *s , unsigned int maxlen ) ;
 extern float strtof(char const   *str , char const   *endptr ) ;
+extern unsigned int strnlen(char const   *s , unsigned int maxlen ) ;
 struct timeval {
    long tv_sec ;
    long tv_usec ;
 };
-extern long clock(void) ;
 extern void qsort(void *base , unsigned int nel , unsigned int width , int (*compar)(void *a ,
                                                                                      void *b ) ) ;
+extern long clock(void) ;
 extern long time(long *tloc ) ;
 struct _1_main_1_opaque_NodeStruct *_1_main_1_opaque_ptr_1  =    (struct _1_main_1_opaque_NodeStruct *)0;
 extern int read(int filedes , void *buf , unsigned int nbyte ) ;
 extern int rand() ;
-extern int strcmp(char const   *a , char const   *b ) ;
 extern void *fopen(char const   *filename , char const   *mode ) ;
+extern int strcmp(char const   *a , char const   *b ) ;
 extern double sqrt(double x ) ;
+extern long strtol(char const   *str , char const   *endptr , int base ) ;
 extern void *malloc(unsigned int size ) ;
 extern int snprintf(char *str , unsigned int size , char const   *format  , ...) ;
-extern long strtol(char const   *str , char const   *endptr , int base ) ;
 extern int nanosleep(int *rqtp , int *rmtp ) ;
 typedef struct _1_main_1_opaque_NodeStruct *_1_main_1_opaque_StructureType;
 extern int pthread_mutex_unlock(int *mutex ) ;
@@ -85,25 +84,23 @@ extern int pthread_create(void *thread , void *attr , void *start_routine , void
 extern int fseek(struct _IO_FILE *stream , long offs , int whence ) ;
 extern int fscanf(struct _IO_FILE *stream , char const   *format  , ...) ;
 void megaInit(void) ;
-void _2_stringEncoder(int n , char str[] ) 
+void megaInit(void) 
 { 
-  int encodeStrings_i3 ;
+
 
   {
-  encodeStrings_i3 = 0;
-  switch (n) {
 
-  }
 }
 }
 int main(int _formal_argc , char **_formal_argv , char **_formal_envp ) 
 { 
+  int a ;
   int _BARRIER_0 ;
-  struct _1_main_1_opaque_NodeStruct *p5 ;
-  int r6 ;
-  struct _1_main_1_opaque_NodeStruct *p7 ;
-  int r8 ;
-  struct _1_main_1_opaque_NodeStruct *p9 ;
+  struct _1_main_1_opaque_NodeStruct *p6 ;
+  int r7 ;
+  struct _1_main_1_opaque_NodeStruct *p8 ;
+  int r9 ;
+  struct _1_main_1_opaque_NodeStruct *p10 ;
   int _1_main__BEGIN_1 ;
   int _1_main__END_1 ;
   int _1_main__BARRIER_2 ;
@@ -115,37 +112,30 @@ int main(int _formal_argc , char **_formal_argv , char **_formal_envp )
   _global_envp = _formal_envp;
   _BARRIER_0 = 1;
   _1_main__BEGIN_1 = 1;
-  p5 = (struct _1_main_1_opaque_NodeStruct *)malloc(sizeof(struct _1_main_1_opaque_NodeStruct ));
-  p5->next = p5;
-  p5->prev = p5;
-  _1_main_1_opaque_list_1 = p5;
-  r8 = rand();
-  p9 = (struct _1_main_1_opaque_NodeStruct *)malloc(sizeof(struct _1_main_1_opaque_NodeStruct ));
-  p9->data = 0 * r8;
-  p9->next = _1_main_1_opaque_list_1->next;
-  p9->prev = _1_main_1_opaque_list_1;
-  (_1_main_1_opaque_list_1->next)->prev = p9;
-  _1_main_1_opaque_list_1->next = p9;
-  r6 = rand();
-  p7 = (struct _1_main_1_opaque_NodeStruct *)malloc(sizeof(struct _1_main_1_opaque_NodeStruct ));
-  p7->data = 1 * r6;
-  p7->next = _1_main_1_opaque_list_1->next;
-  p7->prev = _1_main_1_opaque_list_1;
-  (_1_main_1_opaque_list_1->next)->prev = p7;
-  _1_main_1_opaque_list_1->next = p7;
+  p6 = (struct _1_main_1_opaque_NodeStruct *)malloc(sizeof(struct _1_main_1_opaque_NodeStruct ));
+  p6->next = p6;
+  p6->prev = p6;
+  _1_main_1_opaque_list_1 = p6;
+  r9 = rand();
+  p10 = (struct _1_main_1_opaque_NodeStruct *)malloc(sizeof(struct _1_main_1_opaque_NodeStruct ));
+  p10->data = 0 * r9;
+  p10->next = _1_main_1_opaque_list_1->next;
+  p10->prev = _1_main_1_opaque_list_1;
+  (_1_main_1_opaque_list_1->next)->prev = p10;
+  _1_main_1_opaque_list_1->next = p10;
+  r7 = rand();
+  p8 = (struct _1_main_1_opaque_NodeStruct *)malloc(sizeof(struct _1_main_1_opaque_NodeStruct ));
+  p8->data = 1 * r7;
+  p8->next = _1_main_1_opaque_list_1->next;
+  p8->prev = _1_main_1_opaque_list_1;
+  (_1_main_1_opaque_list_1->next)->prev = p8;
+  _1_main_1_opaque_list_1->next = p8;
   _1_main_1_opaque_ptr_1 = _1_main_1_opaque_list_1->next;
   _1_main_1_opaque_ptr_2 = _1_main_1_opaque_ptr_1;
   _1_main__END_1 = 1;
   _1_main__BARRIER_2 = 1;
-  printf((char const   */* __restrict  */)"Hello");
+  a = 42;
+  printf((char const   */* __restrict  */)"%d", a);
   return (0);
-}
-}
-void megaInit(void) 
-{ 
-
-
-  {
-
 }
 }
