@@ -1,0 +1,9 @@
+b o___97
+r
+# b *0x40083d
+b *0x401370
+c
+display *0x7fffffffe2b0
+display *0x7fffffffe2b8
+display/a *0x0000000000603288
+display/a *0x00000000006032a8

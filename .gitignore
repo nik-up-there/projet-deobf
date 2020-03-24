@@ -3,3 +3,4 @@ create-c/.idea/
 *.txt
 .gdb_history
 .DS_Store
+.vscode

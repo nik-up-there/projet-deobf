@@ -1,0 +1,6 @@
+b o___97
+r
+display $rsi
+b *0x401378
+c
+q
