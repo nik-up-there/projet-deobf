@@ -2,6 +2,7 @@
 #include "tigress.h"
 
 int main(){
-	printf("Hello");
+    int a = 42;
+	printf("%d", a);
 	return 0;
 }

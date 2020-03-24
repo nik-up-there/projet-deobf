@@ -2,6 +2,7 @@
 #include "tigress.h"
 
 int main(){
-	printf("Hello");
+    char* s = "Hello";
+	printf("%s", s);
 	return 0;
 }
