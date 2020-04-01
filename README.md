@@ -38,6 +38,27 @@ tigress --Environment=x86_64:Linux:Gcc:4.6 \
 --Functions=main  \
 --out=antiAliasAnalysis_function_call.c \
 /media/sf_kali-sharedfolder/deobfuscation/projet-deobf/transformations/transformation_anti_alias_analysis/function_call.c
+
+tigress --Environment=x86_64:Linux:Gcc:4.6 \
+--Transform=InitEntropy \
+--Functions=main \
+--InitEntropyKinds=vars \
+--Transform=InitOpaque \
+--Functions=main  \
+--InitOpaqueStructs=list,array,env,input \
+--Transform=AntiAliasAnalysis \
+--Functions=main  \
+--out=antiAliasAnalysis_function_call.c \
+/media/sf_kali-sharedfolder/deobfuscation/projet-deobf/transformations/transformation_anti_alias_analysis/function_call.c
+
+tigress --Environment=x86_64:Linux:Gcc:4.6 \
+  --Transform=InitOpaque \
+  --Functions=main \
+  --Transform=EncodeLiterals \
+   --Functions=main  \
+    --EncodeLiteralsKinds=* \
+  --out=encode_literals_literals.c \
+  /media/sf_kali-sharedfolder/deobfuscation/projet-deobf/orginal_c/literals.c
 ```
 
 ## Fichiers de tests 

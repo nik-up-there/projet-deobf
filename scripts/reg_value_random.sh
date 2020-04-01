@@ -16,10 +16,11 @@ else
   touch ${file}
 fi
 
-for i in {1..100}
+for i in {1..10}
     do
-      res=$(gdb -x .gdbinit_b --args 1.1 $RANDOM | tail -1 | awk 'NF{print $NF}' )
-      echo "$i $res" >> ${file}
+      arg=$RANDOM
+      res=$(gdb -x .gdbinit_jump --args 1.1 $arg | tail -1 | awk 'NF{print $NF}' )
+      echo "$arg $res" >> ${file}
     done  
 
 echo "In file $file:"

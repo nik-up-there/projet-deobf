@@ -29,7 +29,7 @@ void o___97(ulong *param_1,ulong *param_2)
   uint uStack164;
   uint uStack160;
   undefined uStack155;
-  long **applStack72 [4];
+  long **ARRAY [4];
   ulong uStack40;
   ulong uStack32;
   ulong *local_18;
@@ -88,7 +88,7 @@ void o___97(ulong *param_1,ulong *param_2)
   ARRAY[1] = (long **)*ARRAY[1]; // INSTANCIATION ARRAY[1] = (long**) 0x6032c0
 
   // STACK 248
-  puStack248 = (undefined8 *)malloc(0x18); // adress 0x6032e0?
+  puStack248 = (undefined8 *)malloc(0x18); // adresse 0x6032e0?
   *(undefined8 **)(puStack248 + 2) = puStack248; // 0x6032e0+2*0x8 -> 0x6032e0
   *(undefined8 **)(puStack248 + 1) = puStack248; // 0x6032e0+0x8 -> 0x6032e0
   o___107._0_8_ = puStack248; // INSTANCIATION o___107._0_8_ = 0x6032e0
@@ -138,15 +138,11 @@ void o___97(ulong *param_1,ulong *param_2)
   */
 
   /* --------------------------------- PARTIE CALCUL ------------------------------- */
-  /* WARNING: Switch is manually overridden */
-
-  // COMP_1 à 0x400cd0 OK
-  if ((*o___107._8_8_ >> 1 & 1) != 0) { // Avant dernier bit à 1?
-    // 0x400fe1
+  if ((*o___107._8_8_ >> 1 & 1) != 0) { // Check at 400cd0 : if => 400fe1, 4010e2
     **(long **)(o___107 + ((long)(int)*o___107._8_8_ & 1U) * 8) = uStack32 + *(long *)(o___102 + ((long)(int)uStack32 & 1U) * 8);
     ARRAY[(long)(int)*o___107._0_8_ & 1][1] = (long *)(&uStack40)[(long)(int)o___102._0_8_ & 1];
   }
-  // 4010e2
+
 
   // *o___107._0_8_ = valeur à 0x4010ea dans rax = *0x603300 (gdb)?
   // COMP_2 à 0x4010f9 OK
@@ -161,10 +157,10 @@ void o___97(ulong *param_1,ulong *param_2)
       while (uStack164 < 0x10) {
         uVar5 = (long)(int)*o___107._8_8_ & 1;
         (&uStack40)[uVar5] =
-                ((&uStack40)[(long)(int)*o___107._8_8_ & 1] & 0xf) << 2 | (&uStack40)[uVar5];
+          ((&uStack40)[(long)(int)*o___107._8_8_ & 1] & 0xf) << 2 | (&uStack40)[uVar5];
         uStack168 = *(undefined4 *)(&uStack40 + ((ulong)uStack164 & 1));
         *(undefined4 *)(&uStack40 + ((ulong)uStack164 & 1)) =
-                *(undefined4 *)((long)&uStack40 + ((ulong)uStack164 & 1) * 8 + 4);
+          *(undefined4 *)((long)&uStack40 + ((ulong)uStack164 & 1) * 8 + 4);
         *(undefined4 *)((long)&uStack40 + ((ulong)uStack164 & 1) * 8 + 4) = uStack168;
         ARRAY[1] = (long **)*ARRAY[1];
         uStack160 = uStack160 + 1 & 1;
@@ -175,18 +171,53 @@ void o___97(ulong *param_1,ulong *param_2)
       // COMP_211 à 0x401073
       if ((*o___107._8_8_ >> 1 & 1) == 0) {
         // 0x400e55
-        *(long **)(ARRAY + ((long)(int)*o___107._8_8_ & 1)) =
-                *ARRAY[(long)(int)*o___107._8_8_ & 1];
-        ARRAY[(long)(int)*o___107._0_8_ & 1][1] =
-                (long *)(&uStack40)[(long)(int)*o___107._8_8_ & 1];
-        uVar1 = *(undefined *)(*(long *)(o___107 + ((long)(int)*o___107._8_8_ & 1U) * 8) + 7);
-        *(undefined *)(*(long *)(o___107 + ((long)(int)*o___107._8_8_ & 1U) * 8) + 7) =
-                *(undefined *)(*(long *)(o___107 + ((long)(int)*o___107._8_8_ & 1U) * 8) + 6);
-        *(undefined *)(*(long *)(o___107 + ((long)(int)*o___107._8_8_ & 1U) * 8) + 6) = uVar1;
-        uStack155 = *(undefined *)(*(long *)(o___107 + ((long)(int)*o___107._8_8_ & 1U) * 8) + 6);
-        *(undefined *)(*(long *)(o___107 + ((long)(int)*o___107._8_8_ & 1U) * 8) + 6) =
-                *(undefined *)(*(long *)(o___107 + ((long)(int)*o___107._8_8_ & 1U) * 8) + 1);
-        *(undefined *)(*(long *)(o___107 + ((long)(int)*o___107._8_8_ & 1U) * 8) + 1) = uStack155;
+        if ((*o___107[1] >> 1 & 1) == 0) { // 400e55
+          // Changeray ARRAY[0] et 107[0], ça change d'adresse?
+          printf("%s\n", "COMP215 True");
+          long uStack155;
+          char uVar1;
+
+          // ARRAY[0] = ARRAY[0][0] (ou 1, 1) (0x603280 => 0x603288) (0x6032c0 => 0x6032a0) OK
+          *(long **) (ARRAY + ((long) (int) *o___107[1] & 1)) = *ARRAY[(long) (int) *o___107[1] & 1];
+//        print_specific("1", uStack, o___102, o___107, ARRAY);
+
+          // ARRAY[0][1] = uStack[0] ou ARRAY[1][1] = uStack[1] OK
+          ARRAY[(long) (int) *o___107[0] & 1][1] = (long *) (&uStack[0])[(long) (int) *o___107[1] & 1];
+//        print_specific("2", uStack, o___102, o___107, ARRAY);
+
+          // o___107 = 0x602090 -> 0x603300 + 7 = 0x603307 => valeur
+          // uVar1 = valeur (seul octet)
+          // uVar1 = Octets de poid fort de la valeur *o___107 (en little indian, le dernier octet est le poid fort).
+          uVar1 = *(char * )(*(long *) ((char*) o___107 + ((long) (int) *o___107[1] & 1U) * 8 ) + 7);
+          print_specific("uVar1", uStack, o___102, o___107, ARRAY);
+
+          // OK 0x7070504c5b3fedee = 0x7070504c5b3fedee
+          *(long * )(*(long *) ((char*) o___107 + ((long) (int) *o___107[1] & 1U) ) + 7) = *(long * )(*(long *) ((char*)o___107 + ((long) (int) *o___107[1] & 1U) ) + 6);
+          print_specific("400F27", uStack, o___102, o___107, ARRAY); // 400F23
+
+          // OK 0x7095504c5b3fedee = 0x7095504c5b3fedee
+          *(char * )(*(long *) ((char*) o___107 + ((long) (int) *o___107[1] & 1U) ) + 6) = uVar1;
+          print_specific("400F4E", uStack, o___102, o___107, ARRAY); //400F4E
+
+          uStack155 = *(long * )(*(long *) ((char*)o___107 + ((long) (int) *o___107[1] & 1U) ) + 6);
+//        print_specific("6", uStack, o___102, o___107, ARRAY);
+
+          // PB 0x70 ed 504c5b3fedee != 0x3f ed 504c5b3fedee
+          *(char * )(*(long *) ((char*)o___107 + ((long) (int) *o___107[1] & 1U) ) + 6) = *(long * )(*(long *) ((char*)o___107 + ((long) (int) *o___107[1] & 1U) ) + 1);
+          print_specific("400FB5", uStack, o___102, o___107, ARRAY);
+
+          // PB 0x70ed504c5b3f 95 ee != 0x7ac01840957095ee
+          *(char * )(*(long *) ((char*)o___107 + ((long) (int) *o___107[1] & 1U) ) + 1) = uStack155;
+          print_specific("400FDC", uStack, o___102, o___107, ARRAY);
+
+          flag = 1;
+        } else {
+          printf("%s\n", "COMP215 False");
+          unsigned long uStack144;
+          unsigned long uStack140;
+          uStack140 = 0;
+          uStack144 = 0;
+        }
       } else {
         // 0x40122a rien ici car simplifié met des adresses à 0 non réutilisées
       }
@@ -205,9 +236,9 @@ void o___97(ulong *param_1,ulong *param_2)
       uStack192 = 0;
       while (uStack192 < 8) {
         ARRAY[uStack188][1] =
-                (long *)(*(long *)(o___102 + (ulong)uStack188 * 8) - (&uStack40)[uStack188]);
+          (long *)(*(long *)(o___102 + (ulong)uStack188 * 8) - (&uStack40)[uStack188]);
         *(long **)(ARRAY + ((long)(int)o___102._0_8_ & 1)) =
-                *ARRAY[(long)(int)o___102._0_8_ & 1];
+          *ARRAY[(long)(int)o___102._0_8_ & 1];
         *(long **)(ARRAY + uStack188) = *ARRAY[uStack188];
         uStack188 = uStack188 + 1 & 1;
         uStack192 = uStack192 + 2;
@@ -221,24 +252,24 @@ void o___97(ulong *param_1,ulong *param_2)
         // 40129e
         // COMP_2211 à 0x40121a
         if (
-            ((*o___107._0_8_ & 1) != 0)
-            &&
-            ((uStack32 & 1) == 0)) {
+          ((*o___107._0_8_ & 1) != 0)
+          &&
+          ((uStack32 & 1) == 0)) {
           // 400d04
           *(long **)(ARRAY + ((long)(int)ARRAY[0][1] & 1)) =
-                  *ARRAY[(long)(int)ARRAY[0][1] & 1];
+            *ARRAY[(long)(int)ARRAY[0][1] & 1];
           uVar5 = (long)(int)ARRAY[0][1] & 1;
           (&uStack40)[uVar5] =
-                  ((&uStack40)[(long)(int)uStack32 & 1] & 0x1f) << 4 | (&uStack40)[uVar5];
+            ((&uStack40)[(long)(int)uStack32 & 1] & 0x1f) << 4 | (&uStack40)[uVar5];
           puStack288 = (undefined8 *)malloc(0x18);
           iVar2 = (int)uStack40;
           *puStack288 = (&uStack40)[(long)iVar2 & 1];
           puStack288[2] = *(undefined8 *)(*(long *)(o___107 + ((long)iVar2 & 1U) * 8) + 0x10);
           puStack288[1] = *(undefined8 *)(o___107 + ((long)iVar2 & 1U) * 8);
           *(undefined8 **)(*(long *)(*(long *)(o___107 + ((long)iVar2 & 1U) * 8) + 0x10) + 8) =
-                  puStack288;
+            puStack288;
           *(undefined8 **)(*(long *)(o___107 + ((long)iVar2 & 1U) * 8) +
-          0x10) = puStack288;
+                           0x10) = puStack288;
         }
         // Valeur de o___107._8_8_ à 4011d3 dans rax
         // COMP_2212 à 4011e2
@@ -255,11 +286,11 @@ void o___97(ulong *param_1,ulong *param_2)
           iVar2 = (int)o___102._0_8_;
           *(long **)(ARRAY + ((long)iVar2 & 1)) = *ARRAY[(long)iVar2 & 1];
           (&uStack40)[(long)(int)o___102._8_8_ & 1] =
-                  *(ulong *)(o___102 + ((long)iVar2 & 1U) * 8) >>
-                                                               ((byte)(*(ulong *)(o___102 + ((long)(int)ARRAY[0][1] & 1U) * 8) >> 1) & 7 | 1);
+            *(ulong *)(o___102 + ((long)iVar2 & 1U) * 8) >>
+                                                         ((byte)(*(ulong *)(o___102 + ((long)(int)ARRAY[0][1] & 1U) * 8) >> 1) & 7 | 1);
           *o___107._8_8_ =
-                  (&uStack40)[(long)(int)ARRAY[0][1] & 1] *
-                  (&uStack40)[(long)(int)ARRAY[1][1] & 1];
+            (&uStack40)[(long)(int)ARRAY[0][1] & 1] *
+            (&uStack40)[(long)(int)ARRAY[1][1] & 1];
         }
 
       } else {
@@ -276,7 +307,7 @@ void o___97(ulong *param_1,ulong *param_2)
             // 401243
             o___102._8_8_ = ((&uStack40)[(long)(int)uStack40 & 1] & 7) << 2 | o___102._8_8_;
             ARRAY[(long)(int)o___102._0_8_ & 1][1] =
-                    (long *)(&uStack40)[(long)(int)ARRAY[1][1] & 1];
+              (long *)(&uStack40)[(long)(int)ARRAY[1][1] & 1];
             pplVar4 = (long **)malloc(0x18);
             pplVar4[1] = (long *)(*(long *)(o___102 + ((long)(int)ARRAY[0][1] & 1U) * 8) -
                                   o___102._0_8_);
@@ -305,69 +336,7 @@ void o___97(ulong *param_1,ulong *param_2)
               (long)ARRAY[0][1] + (long)ARRAY[1][1] &
 
               (o___102._0_8_ | o___102._8_8_ | (*o___107._0_8_ << ((byte)(*o___107._8_8_ >> 4) & 0xf | 1)) | (*o___107._0_8_ >> (0x40 - ((byte)(*o___107._8_8_ >> 4) & 0xf | 1)) &
-               0x3f));
+                                                                                                              0x3f));
   return;
 }
-
-/*
-        00401348 b8 40 00        MOV        EAX,0x40
-                 00 00
-        0040134d 89 c1           MOV        ECX,EAX
-        0040134f 48 8b 55 e0     MOV        RDX,qword ptr [RBP + -0x20]
-        00401353 48 8b 75 e8     MOV        RSI,qword ptr [RBP + -0x18]
-        00401357 48 c1 ee 04     SHR        RSI,0x4
-        0040135b 48 83 e6 07     AND        RSI,0x7
-        0040135f 48 83 ce 01     OR         RSI,0x1
-        00401363 48 89 8d        MOV        qword ptr [RBP + -0x288],RCX
-                 78 fd ff ff
-        0040136a 48 89 f1        MOV        RCX,RSI
-        0040136d 48 d3 ea        SHR        RDX,CL
-        00401370 48 8b 75 c0     MOV        RSI,qword ptr [RBP + -0x40]
-        00401374 48 8b 76 08     MOV        RSI,qword ptr [RSI + 0x8]
-        00401378 48 8b 7d c8     MOV        RDI,qword ptr [RBP + -0x38]
-        0040137c 48 03 77 08     ADD        RSI,qword ptr [RDI + 0x8]
-        00401380 48 21 f2        AND        RDX,RSI
-        00401383 48 8b 34        MOV        RSI,qword ptr [o___102]                          = ??
-                 25 70 20
-                 60 00
-        0040138b 48 0b 34        OR         RSI,qword ptr [o___102[8]]                       = null
-                 25 78 20
-                 60 00
-        00401393 48 8b 3c        MOV        RDI,qword ptr [o___107]                          = ??
-                 25 90 20
-                 60 00
-        0040139b 48 8b 3f        MOV        RDI,qword ptr [RDI]
-        0040139e 4c 8b 04        MOV        R8,qword ptr [o___107[8]]                        = null
-                 25 98 20
-                 60 00
-        004013a6 4d 8b 00        MOV        R8,qword ptr [R8]
-        004013a9 49 c1 e8 04     SHR        R8,0x4
-        004013ad 49 83 e0 0f     AND        R8,0xf
-        004013b1 49 83 c8 01     OR         R8,0x1
-        004013b5 4c 89 c1        MOV        RCX,R8
-        004013b8 48 d3 e7        SHL        RDI,CL
-        004013bb 4c 8b 04        MOV        R8,qword ptr [o___107]                           = ??
-                 25 90 20
-                 60 00
-        004013c3 4d 8b 00        MOV        R8,qword ptr [R8]
-        004013c6 4c 8b 0c        MOV        R9,qword ptr [o___107[8]]                        = null
-                 25 98 20
-                 60 00
-        004013ce 4d 8b 09        MOV        R9,qword ptr [R9]
-        004013d1 49 c1 e9 04     SHR        R9,0x4
-        004013d5 49 83 e1 0f     AND        R9,0xf
-        004013d9 49 83 c9 01     OR         R9,0x1
-        004013dd 4c 8b 95        MOV        R10,qword ptr [RBP + -0x288]
-                 78 fd ff ff
-        004013e4 4d 29 ca        SUB        R10,R9
-        004013e7 4c 89 d1        MOV        RCX,R10
-        004013ea 49 d3 e8        SHR        R8,CL
-        004013ed 4c 09 c7        OR         RDI,R8
-        004013f0 48 09 fe        OR         RSI,RDI
-        004013f3 48 21 f2        AND        RDX,RSI
-        004013f6 48 8b 75 f0     MOV        RSI,qword ptr [RBP + -0x10]
-        004013fa 48 89 16        MOV        qword ptr [RSI],RDX
-        004013fd e9 a5 f8        JMP        LAB_00400ca7
-                 ff ff
-*/
 

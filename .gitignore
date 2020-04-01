@@ -4,3 +4,4 @@ create-c/.idea/
 .gdb_history
 .DS_Store
 .vscode
+__pycache__/

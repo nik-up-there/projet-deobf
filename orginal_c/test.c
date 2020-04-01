@@ -2,11 +2,9 @@
 #include <stdlib.h>
 
 int main(){
-  int a = 4;
-  a = 5;
-  int b = 5;
-  a = 6;
-  b = 6;
-  a = 6;
-  return a;
+  unsigned long a = 80;
+  char b = (char)a;
+  printf("%d", a);
+  printf("%s", b);
+  return 0;
 }

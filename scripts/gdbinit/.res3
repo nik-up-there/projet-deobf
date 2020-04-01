@@ -1,0 +1,39 @@
+b o___97
+r
+# Start
+#b *0x400cb9
+# After Comp1
+#b *0x4010e2
+# Steps in Comp215
+# b *0x400f27
+# b *0x400f4e
+# b *0x400fb1
+# b *0x400fdc
+
+# After Comp21
+#b *0x401078
+# In Comp22
+b *0x4007ca
+# Before Comp225
+b *0x4010c8
+# After Comp2255 if
+#b *0x4017bd
+# Before Comp22555
+b *0x400ce8
+# After Comp22555 if
+b *0x40132a
+# End
+b *0x4013fd
+display/ag (long*)($rbp-0x18)
+display/ag (long*)($rbp-0x20)
+display/ag 0x602070
+display/ag 0x602078
+display/ag 0x603300
+display/ag 0x603340
+display/ag 0x603288
+display/ag 0x6032c8
+display/ag 0x603268
+display/ag 0x6032a8
+
+# watch *(long*)0x603300
+#display/d $rdx

@@ -1,0 +1,7 @@
+b o___97
+r
+display $rax
+b *0x400cb7
+c
+q
+

@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/dang/Documents/kali-sharedfolder/deobfuscation/projet-deobf/1.1_solution2/main.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+
